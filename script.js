@@ -1,46 +1,43 @@
-var friends = ['nequil', 'jack', 'mike', 'lauren', 'carry', 'cat', 'sidney', 'sarah', 'mark', 'alex']
 var sentence = 'hello world my name is john doe, goodbye forever world'
 var fn;
 var input = 'nequil';
 
-function displayAlert() {
-        alert(fn.value);
-    }
+function display() {
+    alert(fn.value);
+}
 
 function displayOutput() {
-        document.getElementById("userInput").innerHTML;
-        document.getElementById("result").innerHTML = input;
-    };
+    document.getElementById("userInput").innerHTML;
+    document.getElementById("result").innerHTML = input;
+};
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Question One
-    var buttonOne = document.createElement('button');
-    buttonOne.innerHTML = "something";
-
+    var button = document.createElement('button');
+    button.innerHTML = "Hey welcome to my page!";
     var body = document.getElementsByTagName("body")[0];
-    body.appendChild(buttonOne);
+    body.appendChild(button);
 
-    buttonOne.addEventListener ("click", function() {
-    alert("did something");
+    button.addEventListener ("click", function() {
+    alert("Nice knowing you");
     });
 
-    // Question Two
-    fn = document.getElementById('a');
+    
+    fn = document.getElementById('textbox');
 
-    // Question Three
+    
     var box = document.createElement('div');
-            box.style.width = '200px';
-            box.style.height = '200px';
-            box.style.backgroundColor = 'lightblue';
-            box.style.marginBottom = '1em'
-            document.body.appendChild(box);
+        box.style.width = '200px';
+        box.style.height = '200px';
+        box.style.backgroundColor = 'lightblue';
+        box.style.marginBottom = '1em'
+        document.body.appendChild(box);
 
     box.addEventListener('mouseover', function() {
         box.style.backgroundColor = randomColor();
     });
 
     box.addEventListener('mouseleave', function() {
-        box.style.backgroundColor = 'orange';
+        box.style.backgroundColor = 'lightblue';
     });
 
     function randomColor() {
@@ -52,37 +49,38 @@ document.addEventListener('DOMContentLoaded', function() {
         return randomColor;
     }
 
-    // Question Four
+    
     var colortext = document.getElementById("colortext");
     colortext.addEventListener ("click", function() {
         colortext.style.color = 'red';
     });
 
-    // Question Five - Fix
+    
     function displayOutput(success) {
         var input = document.getElementById("userInput").innerHTML;
         document.getElementById("result").innerHTML = input;
     };
 
-    // Question Six
-    var button = document.getElementById("button");
-
-    button.addEventListener('click', function() {
-    for(var i = 0; i < friends.length; i++) {
-            var friend = friends[i];
-
-    var people = document.createElement('div');
-    people.className = 'friend'
-    var names = document.createElement('li');
-    var textName = document.createTextNode(friend);
-    names.appendChild(textName);
-    people.appendChild(names);
-    document.body.appendChild(people);
-    }
+    var friends = ['amyna', 'eric', 'cyrus', 'lauren', 'chris', 'kate', 'kristine', 'gerald', 'jason', 'varner']
+    var addList = document.getElementById('list')
+    var bnt4 = document.getElementById('btn4')
+    btn4.addEventListener('click', function() {
+        for(i=0; i<friends.length; i++) {
+            var li = document.createElement('li')
+            li.innerHTML = friends[i]
+            addList.appendChild(li)
+        }
     });
-
-
-    // Question Seven - Start
-
     
+    var res = sentence.split(" ");
+    var addList= document.getElementById('list')
+    var btn5= document.getElementById('btn5')
+    var lis= document.getElementsByTagName('li')
+    btn5.addEventListener('click',function() {
+        for(i=0; i<friends.length; i++) {
+            lis[i].innerHTML = res[i]
+        }
+    friends=[]
     });
+    
+});
